@@ -13,20 +13,18 @@ print("DEBUG sys.path:", sys.path)
 
 # --- Alembic конфигурация ---
 config = context.config
-
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
 # --- IMPORT Base и модели ---
 from app.api.db.base import Base
-from app.api.models.user import User
+import app.api.models.user
 import app.api.models.poll
 import app.api.models.ballot
 import app.api.models.audit_log
 
-
+# --- target_metadata ---
 target_metadata = Base.metadata
-
 print("DEBUG tables:", list(target_metadata.tables.keys()))
 
 def run_migrations_offline():
