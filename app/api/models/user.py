@@ -1,5 +1,7 @@
 from sqlalchemy import Column, Integer, String, Boolean
-from app.db.base import Base
+
+from app.api.db import base
+from app.api.db.base import Base
 
 class User(Base):
     __tablename__ = "users"
@@ -9,3 +11,4 @@ class User(Base):
     password_hash = Column(String, nullable=False)
     is_admin = Column(Boolean, default=False)
     is_verified = Column(Boolean, default=False)
+

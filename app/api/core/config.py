@@ -1,6 +1,7 @@
 from pydantic import BaseSettings
 
 
+
 class Settings(BaseSettings):
     PROJECT_NAME: str = "VoteIt Backend"
 
@@ -9,7 +10,10 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24
 
     class Config:
-        env_file = ".env"
+        env_file = "/env.py"
 
 
 settings = Settings()
+
+
+
